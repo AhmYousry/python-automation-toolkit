@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python Automation Toolkit</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif; background:#0d1117; color:#e6edf3; padding:40px; }
+  .card { max-width:1000px; margin:0 auto; }
+  .header { display:flex; align-items:center; gap:14px; margin-bottom:6px; }
+  .badge { background:#8957e5; color:#fff; font-size:12px; font-weight:600; padding:4px 10px; border-radius:20px; letter-spacing:.3px; }
+  h1 { font-size:28px; font-weight:700; }
+  .sub { color:#8b949e; font-size:15px; margin-bottom:24px; }
+  .tools { display:flex; gap:12px; margin-bottom:24px; flex-wrap:wrap; }
+  .tool { flex:1; min-width:200px; background:#161b22; border:1px solid #30363d; border-radius:8px; padding:14px 16px; }
+  .tool h3 { font-size:15px; margin-bottom:4px; }
+  .tool p { font-size:13px; color:#8b949e; }
+  .panel-title { font-size:13px; text-transform:uppercase; letter-spacing:1px; color:#8b949e; margin:20px 0 8px; }
+  .terminal { background:#010409; border:1px solid #30363d; border-radius:10px; overflow:hidden; }
+  .tbar { background:#161b22; padding:8px 14px; display:flex; gap:8px; align-items:center; border-bottom:1px solid #30363d; }
+  .dot { width:12px; height:12px; border-radius:50%; }
+  .r{background:#ff5f56;} .y{background:#ffbd2e;} .g{background:#27c93f;}
+  .tpath { color:#8b949e; font-size:12px; margin-left:8px; }
+  .term-body { padding:16px 18px; font-family:'Cascadia Code','Consolas',monospace; font-size:13.5px; line-height:1.7; white-space:pre; overflow-x:auto; }
+  .cmd { color:#7ee787; }
+  .ok { color:#3fb950; }
+  .dim { color:#8b949e; }
+  .grid2 { display:flex; gap:20px; flex-wrap:wrap; }
+  .grid2 > div { flex:1; min-width:300px; }
+  table { width:100%; border-collapse:collapse; margin-top:8px; background:#0d1117; border:1px solid #30363d; border-radius:10px; overflow:hidden; font-size:14px; }
+  th { background:#161b22; text-align:left; padding:10px 14px; color:#58a6ff; font-weight:600; border-bottom:1px solid #30363d; }
+  td { padding:9px 14px; border-bottom:1px solid #21262d; }
+  tr:last-child td { border-bottom:none; }
+  .num { color:#79c0ff; }
+  .footer { margin-top:24px; color:#8b949e; font-size:13px; display:flex; justify-content:space-between; }
+  .tech span { background:#161b22; border:1px solid #30363d; border-radius:6px; padding:3px 9px; margin-right:6px; font-size:12px; color:#c9d1d9; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="header"><h1>Python Automation Toolkit</h1><span class="badge">PYTHON</span></div>
+  <div class="sub">A set of automation tools for common file and data tasks: bulk renaming, CSV cleaning, and automated report generation.</div>
+
+  <div class="tools">
+    <div class="tool"><h3>File Renamer</h3><p>Bulk-renames files in a folder to a consistent scheme.</p></div>
+    <div class="tool"><h3>CSV Cleaner</h3><p>Drops rows with missing values and writes a clean dataset.</p></div>
+    <div class="tool"><h3>Report Generator</h3><p>Produces summary statistics from the cleaned data.</p></div>
+  </div>
+
+  <div class="panel-title">Live Run</div>
+  <div class="terminal">
+    <div class="tbar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="tpath">python-automation-toolkit</span></div>
+    <div class="term-body"><span class="cmd">$ python main.py</span>
+  invoice_march.pdf -> file_0.txt
+  meeting_notes.docx -> file_1.txt
+  vacation_photo.jpg -> file_2.txt
+<span class="ok">Renamed 3 files in data/files</span>
+<span class="ok">CSV cleaned: removed 3 rows with missing values, 4 rows remaining</span>
+<span class="ok">Report generated -> data/report.csv</span></div>
+  </div>
+
+  <div class="grid2">
+    <div>
+      <div class="panel-title">Cleaned data &mdash; clean_data.csv</div>
+      <table>
+        <tr><th>name</th><th>age</th><th>city</th><th>salary</th></tr>
+        <tr><td>Alice</td><td class="num">30</td><td>New York</td><td class="num">85,000</td></tr>
+        <tr><td>David</td><td class="num">45</td><td>Seattle</td><td class="num">99,000</td></tr>
+        <tr><td>Frank</td><td class="num">52</td><td>Austin</td><td class="num">110,000</td></tr>
+        <tr><td>Grace</td><td class="num">41</td><td>Denver</td><td class="num">91,000</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="panel-title">Report &mdash; report.csv</div>
+      <table>
+        <tr><th></th><th>age</th><th>salary</th></tr>
+        <tr><td>count</td><td class="num">4</td><td class="num">4</td></tr>
+        <tr><td>mean</td><td class="num">42.0</td><td class="num">96,250</td></tr>
+        <tr><td>std</td><td class="num">9.20</td><td class="num">10,812</td></tr>
+        <tr><td>min</td><td class="num">30</td><td class="num">85,000</td></tr>
+        <tr><td>max</td><td class="num">52</td><td class="num">110,000</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="tech"><span>Python</span><span>Pandas</span><span>os</span></div>
+    <div>github.com/AhmYousry/python-automation-toolkit</div>
+  </div>
+</div>
+</body>
+</html>
