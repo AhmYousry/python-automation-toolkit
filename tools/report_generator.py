@@ -7,4 +7,5 @@ def generate_report(file):
 
     report.to_csv("data/report.csv")
 
-    print("Report generated")
+    print("Report generated -> data/report.csv")
+    print(report.to_string())

@@ -8,5 +8,6 @@ def rename_files(folder):
         new_path = os.path.join(folder, f"file_{i}.txt")
 
         os.rename(old_path, new_path)
+        print(f"  {file} -> file_{i}.txt")
 
-    print("Files renamed successfully")
+    print(f"Renamed {len(files)} files in {folder}")
